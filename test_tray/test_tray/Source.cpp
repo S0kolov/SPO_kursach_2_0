@@ -8,6 +8,7 @@
 #include <set>
 #include <vector>
 #include <algorithm>
+#include "AutorunInfFile.h"
 
 using namespace std;
 
@@ -103,7 +104,9 @@ void detected_usb_change()
 	for(unsigned int i =0 ; i < insert.size();i++)
 	{
 		char ch = static_cast<char>(insert[i]);
-		MessageBox(NULL,&ch, "New device connected", MB_OK);
+		//MessageBox(NULL,&ch, "New device connected", MB_OK);
+		autorun_inf_file disk(ch);
+		disk.exequte_task();
 	}
 	for (unsigned int i = 0; i< ejected.size(); i++)
 	{
@@ -153,7 +156,6 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 						detected_usb_change();
 					}
 					break;
-
 			}
 			break;
 		default:
@@ -196,10 +198,6 @@ void AddStatusIcon(HWND hWnd, DWORD dwMessage)
 	}
 }
 
-void close_app()
-{
-	
-}
 
 void HandlePopupMenu(HWND hWnd, POINT point)
 {

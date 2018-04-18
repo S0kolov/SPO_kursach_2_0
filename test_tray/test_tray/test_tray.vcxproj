@@ -115,9 +115,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\SPO_AuroRun\Test_open_INF\Test_open_INF\AutorunInfFile.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\SPO_AuroRun\Test_open_INF\Test_open_INF\AutorunInfFile.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
