@@ -9,41 +9,38 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Файлы ресурсов">
+    <Filter Include="Файлы заголовков\Файлы ресурсов">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\SPO_AuroRun\Test_open_INF\Test_open_INF\AutorunInfFile.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="white_list.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
+    <EmbeddedResource Include="BrowserWindow.resx">
+      <Filter>Файлы заголовков\Файлы ресурсов</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History.resx">
+      <Filter>Файлы заголовков\Файлы ресурсов</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Favorite.resx">
+      <Filter>Файлы заголовков\Файлы ресурсов</Filter>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\SPO_AuroRun\Test_open_INF\Test_open_INF\AutorunInfFile.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="white_list.h">
+    <ClInclude Include="BrowserWindow.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="autorun.ico">
-      <Filter>Файлы ресурсов</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="test_tray.rc">
-      <Filter>Файлы ресурсов</Filter>
+    <ResourceCompile Include="MyBrowser.rc">
+      <Filter>Файлы заголовков\Файлы ресурсов</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BrowserWindow.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
