@@ -15,6 +15,7 @@
 #include "AutorunInfFile.h"
 #include "Executor.h"
 #include "DeviceManeger.h"
+
 using namespace std;
 
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
@@ -164,7 +165,6 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	}
 	return 0;
 }
-
 
 BOOL WndProc_OnCreate(HWND hWnd, LPCREATESTRUCT lpCreateStruct)
 {

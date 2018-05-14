@@ -108,3 +108,28 @@ Manufacture :
 Name of product : silicon-power
 serial number : 10101634E6AA1C00A33E153A
 
+Date about flsh-drive D:
+Manufacture : Wilk
+Name of product : 
+serial number : 070359589D46EF75
+
+Date about flsh-drive D:
+Manufacture : 
+Name of product : silicon-power
+serial number : 10101634E6AA1C00A33E153A
+
+Date about flsh-drive I:
+Manufacture : USB3.0
+Name of product : FLASH_DRIVE
+serial number : 07033A3A0DEC8E39
+
+Date about flsh-drive I:
+Manufacture : USB3.0
+Name of product : FLASH_DRIVE
+serial number : 07033A3A0DEC8E39
+
+Date about flsh-drive D:
+Manufacture : UFD_2.0
+Name of product : Silicon-Power8G
+serial number : 13105686032001BD
+

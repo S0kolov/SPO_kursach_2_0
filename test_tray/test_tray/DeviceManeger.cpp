@@ -71,7 +71,6 @@ std::set<device*> DeviceManeger::get_flash_drive()
 }
 
 void DeviceManeger::get_flash_drive_info(device* dev)
-
 {
 	HKEY hk = NULL;
 	LONG Ret = 0;
@@ -119,59 +118,48 @@ void DeviceManeger::get_flash_drive_info(device* dev)
 				fprintf(file, "error get_flash_drive_info: error RegQueryValueEx: %u\n\n", Ret);
 				__leave;
 			}
-			if (wcsstr(data, L"USBSTOR") != NULL)
+			fprintf(file, "Date about flsh-drive %c:\n", dev->letter[0]);
+			ptr1_1 = get_elem(data, L'#', buf1);
+			if (ptr1_1)
 			{
-				fprintf(file, "Date about flsh-drive %c:\n", dev->letter[0]);
-				ptr1_1 = get_elem(data, L'#', buf1);
-				if (ptr1_1)
+				ptr1_2 = get_elem(ptr1_1, L'#', buf1);
+				ptr1_1 = buf1;
+				do
 				{
-					ptr1_2 = get_elem(ptr1_1, L'#', buf1);
-					ptr1_1 = buf1;
-					do
+					ptr2_2 = get_elem(ptr1_1, L'&', buf2);
+					if (wcsstr(buf2, L"Ven_"))
 					{
-						ptr2_2 = get_elem(ptr1_1, L'&', buf2);
-						if (wcsstr(buf2, L"Ven_"))
-						{
-							fprintf(file, "Manufacture : %ls\n", buf2 + 4);
-							dev->manufacture = buf2 + 4;
-						}
-						else if (wcsstr(buf2, L"Prod_"))
-						{
-							fprintf(file, "Name of product : %ls\n", buf2 + 5);
-							dev->name_of_product = buf2 + 5;
-						}
-						ptr1_1 = ptr2_2;
-					} while (ptr2_2);
+						fprintf(file, "Manufacture : %ls\n", buf2 + 4);
+						dev->manufacture = buf2 + 4;
+					}
+					else if (wcsstr(buf2, L"Prod_"))
+					{
+						fprintf(file, "Name of product : %ls\n", buf2 + 5);
+						dev->name_of_product = buf2 + 5;
+					}
+					ptr1_1 = ptr2_2;
+				} while (ptr2_2);
 
-					ptr1_1 = get_elem(ptr1_2, L'#', buf1);
-					ptr1_1 = buf1;
-					do
+				ptr1_1 = get_elem(ptr1_2, L'#', buf1);
+				ptr1_1 = buf1;
+				do
+				{
+					ptr2_2 = get_elem(ptr1_1, L'&', buf2);
+					if (wcslen(buf2)>3)
 					{
-						ptr2_2 = get_elem(ptr1_1, L'&', buf2);
-						if (wcslen(buf2)>3)
-						{
-							fprintf(file, "serial number : %ls\n", buf2);
-							dev->serial_number = buf2;
-							break;
-						}
-						ptr1_1 = ptr2_2;
-					} while (ptr2_2);
-				}
-			}//if USBSTOR
-			else
-				fprintf(file, "Disk %c: not a flash-drive\n", dev->letter[0]);
+						fprintf(file, "serial number : %ls\n", buf2);
+						dev->serial_number = buf2;
+						break;
+					}
+					ptr1_1 = ptr2_2;
+				} while (ptr2_2);
+			}
 		}
 		else
 			fprintf(file, "ERROR get_flash_drive_info: error RegQueryValueEx: %u\n", Ret);
-
 		fprintf(file, "\n");
-	}
-	__finally
+	}__finally
 	{
-		//if (data != nullptr) free(data);
-		//if (buf1 != nullptr) free(buf1);
-		//if (buf2 != nullptr) free(buf2);
-		//if (hk != nullptr) RegCloseKey(hk);
 	}
 }
 
