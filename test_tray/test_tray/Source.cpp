@@ -26,8 +26,6 @@ void HandlePopupMenu(HWND hwnd, POINT point);
 
 HINSTANCE hInst;
 
-
-
 #define WM_NOTIFYICONMSG (WM_USER + 2)
 
 white_list whiteList;
@@ -37,8 +35,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 {
 	MSG msg;
 	WNDCLASSEX wndclass;
-
-	
 
 	hInst = hInstance;
 
@@ -207,7 +203,6 @@ void AddStatusIcon(HWND hWnd, DWORD dwMessage)
 		return;
 	}
 }
-
 
 void HandlePopupMenu(HWND hWnd, POINT point)
 {

@@ -16,16 +16,16 @@ std::string AutorunFile::build_task(const std::string task) const
 	return res;
 }
 
-AutorunFile::AutorunFile(const char disk_letter)
+AutorunFile::AutorunFile(const char disk_letter):Parser()
 {
 	letter_ = disk_letter;
 }
 
-
+/**
+ * \brief 
+ */
 AutorunFile::~AutorunFile()
-{
-
-}
+= default;
 
 int AutorunFile::open_file()
 {
@@ -54,8 +54,7 @@ std::string AutorunFile::parse_file(const std::string& key)
 			return std::string ("");
 		}
 	}
-	Parser pars(&inf_file_,100);
-	const auto result = pars.parse_loop(key);
+	const auto result = parse_loop(key);
 	return result[2];
 }
 

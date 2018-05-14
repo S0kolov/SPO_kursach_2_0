@@ -5,16 +5,14 @@
 #include <windows.h>
 #include <string>
 #include <regex>
+#include "Parser.h"
 
 
 
 
-class AutorunFile
+class AutorunFile: public Parser
 {
-private:
-	std::fstream  inf_file_;
 	char letter_;
-
 public:
 	std::string build_task(std::string task) const;
 	explicit AutorunFile(char disk_letter);
