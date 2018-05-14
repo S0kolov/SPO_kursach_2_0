@@ -237,7 +237,6 @@ void detected_usb_change()
 	{
 		autorun_inf_file disk(dev->letter[0]);
 		get_flash_drive_info(dev);
-		//whiteList.add_device_to_white_list(dev);
 		MessageBox(NULL, dev->letter, "New device connected", MB_OK);
 		if(whiteList.is_device_trusted(dev))
 		{

@@ -34,6 +34,12 @@ void white_list::add_device_to_white_list(device* dev)
 bool white_list::is_device_trusted(device* dev)
 {
 	_file = fopen(_file_path, "r");
+	if(_file == NULL)
+	{
+		_file = fopen(_file_path, "w");
+		fclose(_file);
+		return false;
+	}
 	bool result = false;
 
 	device * dev1 = new device;
