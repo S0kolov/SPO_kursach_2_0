@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AutorunInfFile.cpp" />
+    <ClCompile Include="DeviceManeger.cpp" />
     <ClCompile Include="Executor.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -123,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutorunInfFile.h" />
+    <ClInclude Include="DeviceManeger.h" />
     <ClInclude Include="Executor.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="resource.h" />
@@ -133,6 +135,9 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="test_tray.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

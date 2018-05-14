@@ -3,7 +3,7 @@
 #include "Parser.h"
 
 
-std::string autorun_inf_file::build_task(const std::string task) const
+std::string AutorunFile::build_task(const std::string task) const
 {
 	if(task.empty())
 	{
@@ -16,18 +16,18 @@ std::string autorun_inf_file::build_task(const std::string task) const
 	return res;
 }
 
-autorun_inf_file::autorun_inf_file(const char disk_letter)
+AutorunFile::AutorunFile(const char disk_letter)
 {
 	letter_ = disk_letter;
 }
 
 
-autorun_inf_file::~autorun_inf_file()
+AutorunFile::~AutorunFile()
 {
 
 }
 
-int autorun_inf_file::open_file()
+int AutorunFile::open_file()
 {
 	std::string path;
 	path += letter_;
@@ -36,7 +36,7 @@ int autorun_inf_file::open_file()
 	return (!inf_file_.is_open()) ? -1 : 0;
 }
 
-bool autorun_inf_file::cheak_file()
+bool AutorunFile::cheak_file()
 {
 	switch (this->open_file())
 	{
@@ -45,7 +45,7 @@ bool autorun_inf_file::cheak_file()
 	}
 }
 
-std::string autorun_inf_file::parse_file(const std::string& key)
+std::string AutorunFile::parse_file(const std::string& key)
 {
 	if (!inf_file_.is_open())
 	{
