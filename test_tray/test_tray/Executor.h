@@ -5,11 +5,13 @@
 
 class Executor
 {
-
+	const char * invalid_argument;
+	const char * file_problem;
+	const char * exe_error;
 public:
 	Executor();
 	int exequte_task(std::string task);
-	static const char * exequte_answer(int i);
+	const char * exequte_answer(int i);
 	~Executor();
 };
 

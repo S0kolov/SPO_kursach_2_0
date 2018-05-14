@@ -1,8 +1,12 @@
 #include "Executor.h"
 
 
-Executor::Executor()
+Executor::Executor() : 
+invalid_argument("invalid argument"),
+file_problem("no autorun file or autorun open property"),
+exe_error("error of exequte autorun open file")
 {
+
 }
 
 int Executor::exequte_task(std::string task)
@@ -41,12 +45,15 @@ const char* Executor::exequte_answer(int i)
 	switch (i)
 	{
 	case 0: return ""; break;
-	case 1: return "no autorun file or no autorun open propertis"; break;
-	case -1: return "error of exequte autorun open file"; break;
-	default: return "invalid argument";
+	case 1: return file_problem; break;
+	case -1: return exe_error; break;
+	default: return invalid_argument;
 	}
 }
 
 Executor::~Executor()
 {
+	delete invalid_argument;
+	delete file_problem;
+	delete exe_error;
 }

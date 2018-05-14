@@ -117,12 +117,14 @@
   <ItemGroup>
     <ClCompile Include="AutorunInfFile.cpp" />
     <ClCompile Include="Executor.cpp" />
+    <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="white_list.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutorunInfFile.h" />
     <ClInclude Include="Executor.h" />
+    <ClInclude Include="Parser.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="white_list.h" />
   </ItemGroup>

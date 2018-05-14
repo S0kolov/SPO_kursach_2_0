@@ -9,15 +9,12 @@
 class autorun_inf_file
 {
 private:
-	std::fstream inf_file_;
+	std::fstream  inf_file_;
 	char letter_;
-	int buf_lenght_;
-	char * buf_;
 
-	std::cmatch parse_loop(std::string key);
 public:
 	std::string build_task(std::string task) const;
-	explicit autorun_inf_file(char disk_letter, unsigned delay = 0, int buf_size = 100);
+	explicit autorun_inf_file(char disk_letter);
 	~autorun_inf_file();
 	int  open_file();
 	bool cheak_file();

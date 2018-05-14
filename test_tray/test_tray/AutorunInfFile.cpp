@@ -1,28 +1,7 @@
 #include "AutorunInfFile.h"
 #include <regex>
+#include "Parser.h"
 
-
-std::cmatch autorun_inf_file::parse_loop(std::string key)
-{
-	std::cmatch result;
-	std::string reg_str = "(";
-	reg_str += key;
-	reg_str += R"([\s]?={1}[\s]?)([\S\s]*))";
-	std::string reg_coment_str = ";";
-	const std::regex regular(reg_str.c_str());
-	const std::regex rregex(reg_coment_str.c_str());
-	while (!inf_file_.eof()) {
-
-		inf_file_.getline(buf_, buf_lenght_);
-		std::regex_search(buf_, result, rregex);
-		if (!result.empty()) { continue; }
-		std::regex_search(buf_, result, regular);
-
-		if (!result.empty()) { break; }
-		if (inf_file_.eof()) { return result; }
-	}
-	return result;
-}
 
 std::string autorun_inf_file::build_task(const std::string task) const
 {
@@ -37,17 +16,15 @@ std::string autorun_inf_file::build_task(const std::string task) const
 	return res;
 }
 
-autorun_inf_file::autorun_inf_file(const char disk_letter, const unsigned delay, const int buf_size)
+autorun_inf_file::autorun_inf_file(const char disk_letter)
 {
-	buf_lenght_ = buf_size;
-	buf_ = new char[buf_lenght_];
 	letter_ = disk_letter;
 }
 
 
 autorun_inf_file::~autorun_inf_file()
 {
-	delete[] buf_;
+
 }
 
 int autorun_inf_file::open_file()
@@ -77,7 +54,8 @@ std::string autorun_inf_file::parse_file(const std::string& key)
 			return std::string ("");
 		}
 	}
-	const auto result = parse_loop(key);
+	Parser pars(&inf_file_,100);
+	const auto result = pars.parse_loop(key);
 	return result[2];
 }
 
