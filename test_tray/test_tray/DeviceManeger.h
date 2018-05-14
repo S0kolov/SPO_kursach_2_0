@@ -12,7 +12,7 @@ public:
 	std::set<device*> get_usb_devices();
 	void set_usb_devices(std::set<device*> dev);
 	std::set<device* > get_flash_drive();
-	static void get_flash_drive_info(device * dev);
+	void get_flash_drive_info(device * dev);
 
 	~DeviceManeger();
 };

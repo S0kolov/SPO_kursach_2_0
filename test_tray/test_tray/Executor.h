@@ -1,8 +1,7 @@
 #pragma once
 #include <string>
-#include <windows.h>
+#include <Windows.h>
 #include <process.h>
-
 class Executor
 {
 	const char * invalid_argument;

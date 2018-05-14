@@ -3,7 +3,6 @@
 #include <windows.h>
 #include <windowsx.h>
 #include <cstdio>
-#include <iostream>
 #include "resource.h"
 #include <functional>
 #include <Dbt.h>
@@ -68,8 +67,9 @@ void detected_usb_change()
 {
 	set<device * > new_device_list = devMeneger.get_flash_drive();
 	vector<device *> insert, ejected;
-	set_difference(new_device_list.begin(), new_device_list.end(), devMeneger.get_usb_devices().begin(), devMeneger.get_usb_devices().end(), back_inserter(insert));
-	set_difference(devMeneger.get_usb_devices().begin(), devMeneger.get_usb_devices().end(), new_device_list.begin(), new_device_list.end(), back_inserter(ejected));
+	set<device*> usb = devMeneger.get_usb_devices();
+	set_difference(new_device_list.begin(), new_device_list.end(),usb.begin(), usb.end(), back_inserter(insert));
+	set_difference(usb.begin(), usb.end(), new_device_list.begin(), new_device_list.end(), back_inserter(ejected));
 	devMeneger.set_usb_devices(new_device_list);
 	for (device * dev : insert)
 	{

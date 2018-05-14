@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="white_list">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAIAAAAAAABAEAACAAAMAAAAAAAAAAAEAA=</HashCode>
+      <FileName>white_list.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Executor">
+    <Position X="4.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQAAAAAIAAAAAAQEAAAAAAAAAAAAAAAAACCAAAAAAAA=</HashCode>
+      <FileName>Executor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutorunFile">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAgAAAAAAAAAAEAACAAgAAAAgAAAAQAAAAAAAAA=</HashCode>
+      <FileName>AutorunInfFile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Parser">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABgAAAAAAIAAAAAAAAEAAAAAAAAAAAAAQAAAgAAAAE=</HashCode>
+      <FileName>Parser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DeviceManeger">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEQAAQAAAAAQAAAAAIACAAAAAABAAAAAABCAA=</HashCode>
+      <FileName>DeviceManeger.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="device">
+    <Position X="2.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAEAgAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>white_list.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

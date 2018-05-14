@@ -1,8 +1,5 @@
 #pragma once
-#include <fstream>
-#include <process.h>
-#include <iostream>
-#include <windows.h>
+
 #include <string>
 #include <regex>
 #include "Parser.h"

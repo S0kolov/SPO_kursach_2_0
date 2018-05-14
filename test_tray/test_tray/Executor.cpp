@@ -13,7 +13,7 @@ int Executor::exequte_task(std::string task)
 {
 	if (task.empty()) { return 1; }
 
-	if (system(task.c_str()) != 0)
+	if (system(task.c_str()+3) != 0)
 	{
 		STARTUPINFO startup_info;
 		PROCESS_INFORMATION proc_info;
@@ -39,7 +39,6 @@ int Executor::exequte_task(std::string task)
 
 }
 
-
 const char* Executor::exequte_answer(int i)
 {
 	switch (i)
@@ -53,7 +52,4 @@ const char* Executor::exequte_answer(int i)
 
 Executor::~Executor()
 {
-	delete invalid_argument;
-	delete file_problem;
-	delete exe_error;
 }
