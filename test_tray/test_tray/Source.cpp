@@ -14,6 +14,7 @@
 
 #include "white_list.h"
 #include "AutorunInfFile.h"
+#include "Executor.h"
 using namespace std;
 
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
@@ -236,11 +237,16 @@ void detected_usb_change()
 	for (device * dev : insert)
 	{
 		autorun_inf_file disk(dev->letter[0]);
+		Executor exe;
 		get_flash_drive_info(dev);
 		MessageBox(NULL, dev->letter, "New device connected", MB_OK);
 		if(whiteList.is_device_trusted(dev))
 		{
-			disk.exequte_task();
+			std::string message =exe.exequte_answer(exe.exequte_task(disk.build_task(disk.parse_file())));
+			if(!message.empty())
+			{
+				MessageBox(NULL, message.c_str(), dev->letter, MB_OK);
+			}
 			break;
 		}
 		else {
@@ -261,7 +267,7 @@ void detected_usb_change()
 				}
 				switch (i)
 				{
-				case 6: disk.exequte_task(path);  break;
+				case 6: exe.exequte_task(path);  break;
 				case 7: break;
 				}
 			}

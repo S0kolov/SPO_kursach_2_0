@@ -115,12 +115,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\SPO_AuroRun\Test_open_INF\Test_open_INF\AutorunInfFile.cpp" />
+    <ClCompile Include="AutorunInfFile.cpp" />
+    <ClCompile Include="Executor.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="white_list.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\SPO_AuroRun\Test_open_INF\Test_open_INF\AutorunInfFile.h" />
+    <ClInclude Include="AutorunInfFile.h" />
+    <ClInclude Include="Executor.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="white_list.h" />
   </ItemGroup>
