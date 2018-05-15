@@ -75,8 +75,8 @@ void registratoin_new_device(device* dev, AutorunFile * disk, Executor exe)
 	}
 	else
 	{
-		int i = MessageBox(NULL, "disk have a autorun file. Do you want to exequ it?", device_name, MB_YESNO);
-		switch (MessageBox(NULL, "disk have a autorun file. Add it to white list?", device_name, MB_YESNO))
+		int i = MessageBox(NULL, "disk has the autorun file. Do you want to execut it?", device_name, MB_YESNO);
+		switch (MessageBox(NULL, "disk has the autorun file. Add it to white list?", device_name, MB_YESNO))
 		{
 		case 6: whiteList.add_device_to_white_list(dev);  break;
 		case 7: break;

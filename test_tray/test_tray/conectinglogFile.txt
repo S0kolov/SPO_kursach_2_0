@@ -143,3 +143,18 @@ Manufacture : USB3.0
 Name of product : FLASH_DRIVE
 serial number : 07033A3A0DEC8E39
 
+Date about flsh-drive I:
+Manufacture : USB3.0
+Name of product : FLASH_DRIVE
+serial number : 07033A3A0DEC8E39
+
+Date about flsh-drive I:
+Manufacture : USB3.0
+Name of product : FLASH_DRIVE
+serial number : 07033A3A0DEC8E39
+
+Date about flsh-drive I:
+Manufacture : USB3.0
+Name of product : FLASH_DRIVE
+serial number : 07033A3A0DEC8E39
+
