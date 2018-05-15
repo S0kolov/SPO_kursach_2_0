@@ -64,6 +64,31 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	return msg.wParam;
 }
 
+void registratoin_new_device(device* dev, AutorunFile * disk, Executor exe)
+{
+	string path = disk->parse_file();
+	char device_name[] = "device _ \0";
+	device_name[7] = dev->letter[0];
+	if (path.empty())
+	{
+		MessageBox(NULL, "no autorun file or autorun open property", device_name, MB_OK);
+	}
+	else
+	{
+		int i = MessageBox(NULL, "disk have a autorun file. Do you want to exequ it?", device_name, MB_YESNO);
+		switch (MessageBox(NULL, "disk have a autorun file. Add it to white list?", device_name, MB_YESNO))
+		{
+		case 6: whiteList.add_device_to_white_list(dev);  break;
+		case 7: break;
+		}
+		switch (i)
+		{
+		case 6: exe.exequte_task(path);  break;
+		case 7: break;
+		}
+	}
+}
+
 void detected_usb_change()
 {
 	set<device * > new_device_list = devMeneger.get_flash_drive();
@@ -88,27 +113,7 @@ void detected_usb_change()
 			break;
 		}
 		else {
-			string path = disk.parse_file();
-			char device_name[] = "device _ \0";
-			device_name[7] = dev->letter[0];
-			if (path.empty())
-			{
-				MessageBox(NULL, "no autorun file or autorun open property", device_name, MB_OK);
-			}
-			else
-			{
-				int i = MessageBox(NULL, "disk have a autorun file. Do you want to exequ it?", device_name, MB_YESNO);
-				switch (MessageBox(NULL, "disk have a autorun file. Add it to white list?", device_name, MB_YESNO))
-				{
-				case 6: whiteList.add_device_to_white_list(dev);  break;
-				case 7: break;
-				}
-				switch (i)
-				{
-				case 6: exe.exequte_task(path);  break;
-				case 7: break;
-				}
-			}
+			registratoin_new_device(dev, &disk, exe);
 		}
 	}
 	for (device * dev : ejected)
@@ -126,7 +131,8 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	case WM_NOTIFYICONMSG:
 		switch (lParam) {
 		case WM_LBUTTONDBLCLK:
-			MessageBox(NULL, "double click", "message from icon", MB_OK);
+			//MessageBox(NULL, "double click", "message from icon", MB_OK);
+
 			break;
 
 		case WM_RBUTTONDOWN:	
