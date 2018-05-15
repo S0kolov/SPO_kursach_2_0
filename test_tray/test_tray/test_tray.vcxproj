@@ -23,6 +23,7 @@
     <ProjectGuid>{1487DBEA-91F7-4A0A-B1F3-6AD28E1CED95}</ProjectGuid>
     <RootNamespace>testtray</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectName>Autorun</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
